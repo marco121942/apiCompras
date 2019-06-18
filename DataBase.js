@@ -1,10 +1,16 @@
 var mysql = require('mysql');
 
 var db = mysql.createConnection({
-    host: 'localhost',
+    //host: 'localhost',
+    //user : 'root',
+    //password: '',
+    //database: 'shoppingapi',
+   //debug: false
+
+       host: 'localhost',
     user : 'root',
-    password: '',
-    database: 'shoppingapi',
+    password: 'password',
+    database: 'api',
    debug: false
  
   });
