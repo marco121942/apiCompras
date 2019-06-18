@@ -68,7 +68,7 @@ module.exports = {
 
   eliminar: function (req, res) {
 var  id_producto = req.params.id_producto;
-		db.query('DELETE  FROM producto WHERE id_producto = ? ',[id_producto],(err, rows, fields) =>{
+		db.query('DELETE  * FROM producto WHERE id_producto = ? ',[id_producto],(err, rows, fields) =>{
 
 			if(!err){
 				return res.status(200).send({
@@ -183,7 +183,8 @@ var  id_producto = req.params.id_producto;
 			var fileName = fileSplit[1];
 			var extSplit = fileName.split('\.');
 			var fileExt = extSplit[1];
-			var ruta = "http://ec2-34-217-120-222.us-west-2.compute.amazonaws.com:3000/images/"+fileName;
+
+			var ruta = "http://35.164.145.112:3000/images/"+fileName;
 
 			if(fileExt =='png' || fileExt =='jpg' || fileExt =='jpeg' || fileExt =='gif'){
 			db.query("UPDATE producto SET imagen = ? WHERE  id_producto = ?", [ruta, id_producto], (err, rows, fields) =>{
