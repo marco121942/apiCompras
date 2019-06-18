@@ -16,6 +16,8 @@ module.exports = {
 
 		});
 	},
+
+	
 		usuarioFactura: function (req, res) {
 		let usuario_id= req.body.usuario_id;
 
