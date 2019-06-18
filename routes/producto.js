@@ -9,6 +9,7 @@ router.get('/listar', function(req, res, next) {
 	controller.show(req,res);
  //console.log('prueba GET usuario');
 });
+
 router.post('/codigo', function(req, res, next) {
 	controller.codigo(req,res);
  //console.log('prueba GET usuario');
@@ -18,9 +19,28 @@ router.post('/idProducto', function(req, res, next) {
  //console.log('prueba GET usuario');
 });
 
+router.get('/listarAdmin', function(req, res, next) {
+	controller.adminListar(req,res);
 
-router.post('/crear',multipartMiddleware,function(req,res,next){
+});
+router.post('/crear/:id_producto',multipartMiddleware,function(req,res,next){
 	controller.crear(req,res);
+});
+router.post('/registro',function(req,res,next){
+	controller.registro(req,res);
+});
+router.delete('/delete/:id_producto',function(req,res,next){
+	controller.eliminar(req,res);
+});
+
+
+router.get('/obtener/:id_producto', function(req, res, next) {
+	controller.obtener(req,res);
+ //console.log('prueba GET usuario');
+});
+router.put('/actualizar/:id_producto', function(req, res, next) {
+	controller.actualizar(req,res);
+ //console.log('prueba GET usuario');
 });
 
 

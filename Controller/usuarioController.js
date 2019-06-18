@@ -38,7 +38,7 @@ module.exports = {
 				//res.json(rows);
 			}else{
 				return res.status(500).send({
-				message: "la cagaste"
+				message: "fallo al registrarse"
 			})
 			}
 
@@ -64,7 +64,7 @@ module.exports = {
 			} else {
 			return res.status(500).send({
 			
-				message: "la cagaste"
+				message: "El usuario no existe"
 			});
 			}			
 			res.end();
@@ -72,7 +72,7 @@ module.exports = {
 	} else {
 		return res.status(500).send({
 			
-				message: "la cagaste"
+				message: "error al iniciar sesión"
 			});
 	
 	}
